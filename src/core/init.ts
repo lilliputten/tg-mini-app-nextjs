@@ -1,17 +1,17 @@
 import {
-  setDebug,
-  mountBackButton,
-  restoreInitData,
-  init as initSDK,
-  mountMiniAppSync,
   bindThemeParamsCssVars,
-  mountViewport,
   bindViewportCssVars,
+  emitEvent,
+  init as initSDK,
   mockTelegramEnv,
+  mountBackButton,
+  mountMiniAppSync,
+  mountViewport,
+  restoreInitData,
+  retrieveLaunchParams,
+  setDebug,
   /* type */ ThemeParams,
   themeParamsState,
-  retrieveLaunchParams,
-  emitEvent,
 } from '@telegram-apps/sdk-react';
 
 /**

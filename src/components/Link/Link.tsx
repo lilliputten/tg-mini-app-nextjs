@@ -1,24 +1,14 @@
+import { useCallback, type FC, type JSX, type MouseEventHandler } from 'react';
+import { default as NextLink, type LinkProps as NextLinkProps } from 'next/link';
 import { openLink } from '@telegram-apps/sdk-react';
-import { type FC, type MouseEventHandler, type JSX, useCallback } from 'react';
-import {
-  type LinkProps as NextLinkProps,
-  default as NextLink,
-} from 'next/link';
 
 import { classNames } from '@/css/classnames';
 
 import './Link.css';
 
-export interface LinkProps
-  extends NextLinkProps,
-    Omit<JSX.IntrinsicElements['a'], 'href'> {}
+export interface LinkProps extends NextLinkProps, Omit<JSX.IntrinsicElements['a'], 'href'> {}
 
-export const Link: FC<LinkProps> = ({
-  className,
-  onClick: propsOnClick,
-  href,
-  ...rest
-}) => {
+export const Link: FC<LinkProps> = ({ className, onClick: propsOnClick, href, ...rest }) => {
   const onClick = useCallback<MouseEventHandler<HTMLAnchorElement>>(
     (e) => {
       propsOnClick?.(e);
@@ -36,8 +26,7 @@ export const Link: FC<LinkProps> = ({
       const targetUrl = new URL(path, window.location.toString());
       const currentUrl = new URL(window.location.toString());
       const isExternal =
-        targetUrl.protocol !== currentUrl.protocol ||
-        targetUrl.host !== currentUrl.host;
+        targetUrl.protocol !== currentUrl.protocol || targetUrl.host !== currentUrl.host;
 
       if (isExternal) {
         e.preventDefault();
@@ -48,11 +37,6 @@ export const Link: FC<LinkProps> = ({
   );
 
   return (
-    <NextLink
-      {...rest}
-      href={href}
-      onClick={onClick}
-      className={classNames(className, 'link')}
-    />
+    <NextLink {...rest} href={href} onClick={onClick} className={classNames(className, 'link')} />
   );
 };

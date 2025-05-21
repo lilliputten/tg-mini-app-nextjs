@@ -1,9 +1,9 @@
+import type { FC, ReactNode } from 'react';
 import { isRGB } from '@telegram-apps/sdk-react';
 import { Cell, Checkbox, Section } from '@telegram-apps/telegram-ui';
-import type { FC, ReactNode } from 'react';
 
-import { RGB } from '@/components/RGB/RGB';
 import { Link } from '@/components/Link/Link';
+import { RGB } from '@/components/RGB/RGB';
 import { bem } from '@/css/bem';
 
 import './DisplayData.css';
@@ -32,11 +32,7 @@ export const DisplayData: FC<DisplayDataProps> = ({ header, rows }) => (
         if ('type' in item) {
           valueNode = <Link href={item.value}>Open</Link>;
         } else if (typeof item.value === 'string') {
-          valueNode = isRGB(item.value) ? (
-            <RGB color={item.value} />
-          ) : (
-            item.value
-          );
+          valueNode = isRGB(item.value) ? <RGB color={item.value} /> : item.value;
         } else if (typeof item.value === 'boolean') {
           valueNode = <Checkbox checked={item.value} disabled />;
         } else {
@@ -45,13 +41,7 @@ export const DisplayData: FC<DisplayDataProps> = ({ header, rows }) => (
       }
 
       return (
-        <Cell
-          className={e('line')}
-          subhead={item.title}
-          readOnly
-          multiline={true}
-          key={idx}
-        >
+        <Cell className={e('line')} subhead={item.title} readOnly multiline={true} key={idx}>
           <span className={e('line-value')}>{valueNode}</span>
         </Cell>
       );

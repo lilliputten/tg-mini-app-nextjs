@@ -2,6 +2,7 @@
 // services that require one-time initialization on the client.
 
 import { retrieveLaunchParams } from '@telegram-apps/sdk-react';
+
 import { init } from './core/init';
 import { mockEnv } from './mockEnv';
 
@@ -9,7 +10,7 @@ mockEnv().then(() => {
   try {
     const launchParams = retrieveLaunchParams();
     console.log('[instrumentation-client]', {
-        launchParams,
+      launchParams,
     });
     const { tgWebAppPlatform: platform } = launchParams;
     const debug =

@@ -1,0 +1,26 @@
+# @changed 2025.05.21, 20:10
+# @see https://eslint.org/docs/rules/
+
+'$schema': https://json.schemastore.org/eslintrc
+root: true
+extends:
+  - next/core-web-vitals
+  - prettier
+  - plugin:tailwindcss/recommended
+  - 'plugin:prettier/recommended' # prettier: Slighly slower (+0.3s)
+plugins:
+  # - 'react'
+  - '@typescript-eslint'
+  - 'prettier' # prettier: Slighly slower (+~0.3s)
+rules:
+  curly:
+    - 'warn'
+    - 'all'
+  # curly: warn
+  no-undef: off # Disable js no-undef rule for typescript sources. Using ts2304 instead.
+  # eslint-comments/no-use: warn
+  no-debugger: warn
+  no-console: warn # TODO: To use if console debugging output is deprecated (44 warnings as on 2022.04.06).
+  prettier/prettier: # prettier: Slighly slower (+0.3s)
+    - 'warn' # Can we to use warn if we still use `eslint --max-warnings=0` in `package.json`?
+    - endOfLine: 'auto'
