@@ -1,10 +1,11 @@
 import { Metadata } from 'next';
-import { siteConfig } from '@/config/site';
 // import { routing } from '@/i18n/routing';
 // import { TLocale } from '@/i18n/types';
 import { ClassValue, clsx } from 'clsx';
-// import ms from 'ms';
+import ms from 'ms';
 import { twMerge } from 'tailwind-merge';
+
+import { siteConfig } from '@/config/site';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
