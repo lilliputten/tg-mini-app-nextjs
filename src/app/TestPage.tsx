@@ -20,7 +20,7 @@ export async function TestPage() {
   return (
     <div>
       <div>Application: {siteConfig.versionInfo}</div>
-      <DemoList count={50} />
+      <DemoList count={20} />
     </div>
   );
 }

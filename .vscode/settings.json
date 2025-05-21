@@ -1,3 +1,17 @@
 {
+  "search.exclude": {
+    "*.session": true,
+    "tsconfig.tsbuildinfo": true,
+    "pnpm-lock.yaml": true,
+    "static": true,
+    "build": true,
+    "node_modules": true,
+    "patches": true,
+    "publish": true
+  },
+  "files.exclude": {
+    "**/*.tmp": true,
+    "**/.*.sw?": true
+  },
   "i18n-ally.localesPaths": ["public/locales", "src/core/i18n"]
 }
