@@ -1,7 +1,6 @@
 'use client';
 
 import { openLink } from '@telegram-apps/sdk-react';
-import { TonConnectButton, useTonWallet } from '@tonconnect/ui-react';
 import {
   Avatar,
   Cell,
@@ -12,6 +11,7 @@ import {
   Text,
   Title,
 } from '@telegram-apps/telegram-ui';
+import { TonConnectButton, useTonWallet } from '@tonconnect/ui-react';
 
 import { DisplayData } from '@/components/DisplayData/DisplayData';
 import { Page } from '@/components/Page';
@@ -33,8 +33,8 @@ export default function TONConnectPage() {
           description={
             <>
               <Text>
-                To display the data related to the TON Connect, it is required
-                to connect your wallet
+                To display the data related to the TON Connect, it is required to connect your
+                wallet
               </Text>
               <TonConnectButton className={e('button')} />
             </>
@@ -56,14 +56,7 @@ export default function TONConnectPage() {
           <>
             <Section>
               <Cell
-                before={
-                  <Avatar
-                    src={wallet.imageUrl}
-                    alt="Provider logo"
-                    width={60}
-                    height={60}
-                  />
-                }
+                before={<Avatar src={wallet.imageUrl} alt="Provider logo" width={60} height={60} />}
                 after={<Navigation>About wallet</Navigation>}
                 subtitle={wallet.appName}
                 onClick={(e) => {

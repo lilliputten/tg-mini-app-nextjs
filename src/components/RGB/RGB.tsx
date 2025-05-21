@@ -1,5 +1,5 @@
-import type { RGB as RGBType } from '@telegram-apps/sdk-react';
 import type { FC } from 'react';
+import type { RGB as RGBType } from '@telegram-apps/sdk-react';
 
 import { bem } from '@/css/bem';
 import { classNames } from '@/css/classnames';
