@@ -26,7 +26,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env*.local
+.env*
+!.env*.SAMPLE
 
 # vercel
 .vercel
@@ -38,3 +39,14 @@ next-env.d.ts
 .idea
 
 certificates
+
+# Unused & temp files
+\!UNUSED
+~*
+*_
+zia*
+*.sw?
+*~
+\!ARC*
+*.session
+*crashed-session*

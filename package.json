@@ -1,12 +1,16 @@
 {
   "name": "tg-mini-app-nextjs",
-  "version": "0.1.0",
+  "description": "Sample Next.js Vercel Telegram Mini App",
+  "version": "0.0.0",
+  "timestamp": "2025.05.08 23:46:37 +0300",
+  "changed": "2025.05.05, 23:35",
   "private": false,
   "dependencies": {
     "@telegram-apps/sdk-react": "^3.2.4",
     "@telegram-apps/telegram-ui": "^2.1.5",
     "@tonconnect/ui-react": "^2.1.0",
     "eruda": "^3.0.1",
+    "grammy": "^1.36.1",
     "next": "15.3.1",
     "next-intl": "^4.1.0",
     "normalize.css": "^8.0.1",

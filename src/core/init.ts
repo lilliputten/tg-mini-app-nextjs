@@ -8,7 +8,7 @@ import {
   mountViewport,
   bindViewportCssVars,
   mockTelegramEnv,
-  type ThemeParams,
+  /* type */ ThemeParams,
   themeParamsState,
   retrieveLaunchParams,
   emitEvent,
@@ -22,6 +22,9 @@ export async function init(options: {
   eruda: boolean;
   mockForMacOS: boolean;
 }): Promise<void> {
+  console.log('[init]', {
+    options,
+  });
   // Set @telegram-apps/sdk-react debug mode and initialize it.
   setDebug(options.debug);
   initSDK();
